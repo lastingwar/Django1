@@ -1,0 +1,15 @@
+<div class="widget widget-archives">
+  <h3 class="widget-title">归档</h3>
+  <ul>
+    {% for date in date_list %}
+      <li>
+      {# 这里 {% url %} 这个模板标签的作用是解析视图函数 blog:archive 对应的 URL 模式，并把 URL 模式中的年和月替换成 date.year，date.month 的值。 #}
+        <a href="{% url 'blog125app:archive' date.year date.month %}">
+            {{ date.year }} 年 {{ date.month }} 月
+        </a>
+      </li>
+    {% empty %}
+      暂无归档！
+    {% endfor %}
+  </ul>
+</div>
