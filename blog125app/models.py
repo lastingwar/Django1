@@ -48,9 +48,11 @@ class Post(models.Model):
         self.excerpt = strip_tags(md.convert(self.body))[:54]
         super().save(*args, **kwargs)
     #定义Admin界面的名称
+    #Meta是一个特殊的内置类，可以修改内部的初始属性，ordering修改默认的排序方式
     class Meta:
         verbose_name = '文章'
         verbose_name_plural = verbose_name
+        ordering = ['-created_time']
     def __str__(self):
         return self.title
     #get_absolute_url 方法是将一个模型返回一个url

@@ -63,7 +63,7 @@
         <div class="row">
             <div class="col-md-4 col-sm-5 col-xs-8">
                 <div class="logo">
-                    <h1><a href="index.html"><b>Black</b> &amp; White</a></h1>
+                    <h1><a href="{% url 'blog125app:index' %}"><b>Black</b> &amp; White</a></h1>
                 </div>
             </div><!-- col-md-4 -->
             <div class="col-md-8 col-sm-7 col-xs-4">
@@ -76,13 +76,14 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="cl-effect-11"><a href="index.html" data-hover="首页">首页</a></li>
-                            <li class="cl-effect-11"><a href="full-width.html" data-hover="博客">博客</a></li>
-                            <li class="cl-effect-11"><a href="about.html" data-hover="关于">关于</a></li>
-                            <li class="cl-effect-11"><a href="contact.html" data-hover="联系">联系</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog125app:index' %}" data-hover="首页">首页</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog125app:index' %}" data-hover="博客">博客</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog125app:index' %}" data-hover="关于">关于</a></li>
+                            <li class="cl-effect-11"><a href="{% url 'blog125app:index' %}" data-hover="联系">联系</a></li>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </nav>
+                {# 搜索页面 #}
                 <div id="header-search-box">
                     <a id="search-menu" href="#"><span id="search-icon" class="ion-ios-search-strong"></span></a>
                     <div id="search-form" class="search-form">
@@ -106,7 +107,6 @@
 {% endif %}
 </div>
 <div class="copyrights">Collect from <a href="http://www.cssmoban.com/">网页模板</a></div>
-<div class="copyrights">Modified by <a href="http://zmrenwu.com/">追梦人物的博客</a></div>
 
 <div class="content-body">
     <div class="container">
@@ -149,10 +149,10 @@
     <button type="button" class="overlay-close"><span class="ion-ios-close-empty"></span></button>
     <nav>
         <ul>
-            <li><a href="index.html">首页</a></li>
-            <li><a href="full-width.html">博客</a></li>
-            <li><a href="about.html">关于</a></li>
-            <li><a href="contact.html">联系</a></li>
+            <li><a href="{% url 'blog125app:index' %}">首页</a></li>
+            <li><a href="{% url 'blog125app:index' %}">博客</a></li>
+            <li><a href="{% url 'blog125app:index' %}">关于</a></li>
+            <li><a href="{% url 'blog125app:index' %}">联系</a></li>
         </ul>
     </nav>
 </div>
