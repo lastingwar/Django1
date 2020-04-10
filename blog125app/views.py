@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-from  .models import Post
+from  .models import Post, Category, Tag
 #一种文本转化，可以将文本美化为HTML文本
 import markdown
 #添加正则
@@ -30,7 +30,7 @@ def detail(request, pk):
 
     return render(request, 'blog/detail.html', context={'post': post})
 
-
+#时间归档页面
 def archive(request, year, month):
     #Python 中调用属性的方式通常是 created_time.year，但是由于这里作为方法的参数列表，
     # 所以 django 要求我们把点替换成了两个下划线，即 created_time__year
@@ -39,3 +39,20 @@ def archive(request, year, month):
                                     created_time__month=month
                                     ).order_by('-created_time')
     return render(request, 'blog/index.html', context={'post_list': post_list})
+
+#分类界面
+def category(request, pk):
+    # 在类中查找pk值，相同的分类
+    cate = get_object_or_404(Category, pk=pk)
+    #根据分类查找post
+    post_list = Post.objects.filter(category=cate).order_by('-created_time')
+    return render(request, 'blog/index.html', context={'post_list': post_list})
+
+def tag(request, pk):
+    t = get_object_or_404(Tag, pk=pk)
+    post_list = Post.objects.filter(tags=t).order_by('-created_time')
+    return render(request, 'blog/index.html', context={'post_list': post_list})
+
+
+
+
