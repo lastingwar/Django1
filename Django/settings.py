@@ -29,7 +29,7 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
-#应用管理
+#应用管理,新建应用之后在这里注册
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'blog125app.apps.Blog125AppConfig'
+    'blog125app.apps.Blog125AppConfig',
+    'comments.apps.CommentsConfig',
+
 ]
 
 MIDDLEWARE = [

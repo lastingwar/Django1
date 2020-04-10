@@ -53,6 +53,6 @@ class Post(models.Model):
         verbose_name_plural = verbose_name
     def __str__(self):
         return self.title
-
+    #get_absolute_url 方法是将一个模型返回一个url
     def get_absolute_url(self):
         return reverse('blog125app:detail', kwargs={'pk': self.pk})

@@ -1,0 +1,15 @@
+<h3>评论列表，共 <span>{{ comment_count }}</span> 条评论</h3>
+<ul class="comment-list list-unstyled">
+  {% for comment in comment_list %}
+    <li class="comment-item">
+      <span class="nickname">{{ comment.name }}</span>
+      <time class="submit-date" datetime="{{ comment.created_time }}">{{ comment.created_time }}</time>
+      <div class="text">
+          {#  linebreaks，浏览器会将换行以及连续的多个空格合并为一个空格。如果用户评论的内容中有换行，浏览器会将换行替换为空格，从而显示的用户评论内容就会挤成一堆。linebreaks 过滤器预先将换行符替换为 br HTML 标签，这样内容就能换行显示了。 #}
+        {{ comment.text|linebreaks }}
+      </div>
+    </li>
+  {% empty %}
+    暂无评论
+  {% endfor %}
+</ul>

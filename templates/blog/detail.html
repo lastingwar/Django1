@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
- 
+{% load comments_extras %}
 {% block main %}
     <article class="post post-{{ post.pk }}">
         <header class="entry-header">
@@ -20,6 +20,12 @@
     <section class="comment-area">
 
     </section>
+    <h3>发表评论</h3>
+    {% show_comment_form post %}
+    <div class="comment-list-panel">
+        {% show_comments post %}
+
+</div>
 {% endblock main %}
 {# 目录来自md插件的实例转译成html格式出现的toc属性 #}
 {% block toc %}
@@ -34,3 +40,4 @@
     </div>
   {% endif %}
 {% endblock toc %}
+
