@@ -4,9 +4,17 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+fabric = "*"
+coverage = "*"
 
 [packages]
+django = "~=2.2"
 markdown = "*"
+gunicorn = "*"
+faker = "*"
+django-pure-pagination = "*"
+elasticsearch = ">=2,<3"
+django-haystack = "*"
 
 [requires]
-python_version = "3.7"
+python_version = "3.6"
